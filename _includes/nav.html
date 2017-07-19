@@ -1,0 +1,53 @@
+<nav class="navbar navbar-toggleable-sm bg-faded navbar-light">
+    <div class="menu-box">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+
+
+            <span class="menu-box__open"><span>Menu</span><i class="fa fa-times" aria-hidden="true"></i></span>
+            <span class="menu-box__hamb navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <a href="{{ site.baseurl }}/" class="logo noline navbar-brand">
+        <div class="aspidpro-logo-alt">
+            <div class="aspidpro-logo-mark">
+            </div>
+            <div class="apsidpro-logo-text">
+                ASPID<span class="accent-semibold">PRO</span>
+            </div>
+        </div>
+    </a>
+
+    <div class="navbar-collapse collapse aspid-menu" id="navbarMenu">
+        <ul class="aspid-menu__list">
+            <li class="aspid-menu__item">
+                <a class="aspid-menu__item-link" href="{{ site.baseurl | replace: '//', '/' }}/">Productos y Líneas</a>
+            </li>
+            <li class="aspid-menu__item">
+                <a class="aspid-menu__item-link" href="{{ site.baseurl | replace: '//', '/' }}/archive">Tips y Consejos</a>
+            </li>
+            <li class="aspid-menu__item">
+                <a class="aspid-menu__item-link" href="{{ site.baseurl | replace: '//', '/' }}/typography">Blog</a>
+            </li>
+            <li class="aspid-menu__item">
+                <a class="aspid-menu__item-link" href="{{ site.baseurl | replace: '//', '/' }}/typography">Contáctanos</a>
+            </li>
+            <li class="aspid-menu__item">
+                <a class="aspid-menu__item-link" href="{{ site.baseurl | replace: '//', '/' }}/typography">¿Quiénes Somos?</a>
+            </li>
+            <li class="aspid-menu__item">
+                <a class="aspid-menu__item-link" href="{{ site.baseurl | replace: '//', '/' }}/typography">Distribuidores Autorizados</a>
+            </li>
+            <li class="aspid-menu__item">
+                <a class="aspid-menu__item-link" href="{{ site.baseurl | replace: '//', '/' }}/typography">Talleres y Diplomados</a>
+            </li>
+        </ul>
+
+        <nav class="iconnav">
+            <ul class="iconnav__ul">
+
+                {% include svg-icons.html %}
+
+            </ul>
+        </nav>
+    </div>
+</nav>
