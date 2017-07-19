@@ -1,0 +1,41 @@
+
+//
+// VARIABLES
+//
+
+// Colors
+$blue: #4183C4;
+
+// Grays
+$black: #000;
+$darkerGray: #222;
+$darkGray: #333;
+$gray: #666;
+$lightGray: #eee;
+$white: #fff;
+
+/* AspidPro */
+$baseBackground: #fff;
+$baseShadow: #D9D9D9;
+$menuBackground: #5086B9;
+
+$menuText: #eee;
+
+$footerBackground: #4A4A4A;
+$navSeparator: #787878;
+$footerText: rgba(231, 231, 231, 1);
+
+// Font stacks
+$helvetica: Helvetica, Arial, sans-serif;
+$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$georgia: Georgia, serif;
+$roboto:  'Roboto', sans-serif;
+$openSans: 'Open Sans', sans-serif;
+$fontAwesome: FontAwesome;
+
+// Mobile breakpoints
+@mixin mobile {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}

@@ -1,0 +1,253 @@
+/*********************/
+/* LAYOUT / SECTIONS */
+/*********************/
+
+.iconnav {
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  &__ul {
+    padding: 0;
+    justify-content: center;
+    display: inline-flex;
+
+  }
+  &__soc-item {
+    height: 28px;
+    width: 28px;
+    margin: 0 15px;
+    list-style: none;
+    display: flex;
+
+    a {
+      color: $footerText;
+
+      &:hover {
+        color: lighten($footerText, 20%);
+      }
+      &:active {
+        color: darken($footerText, 20%);
+      }
+      i.fa {
+        font-size: 23px;
+      }
+    }
+  }
+}
+
+.aspid-menu {
+  background: linear-gradient(180deg, #5086B9 0%, #416D96 100%);
+  font-family: $openSans;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  height: calc(100vh - 66px);
+
+  .aspid-menu__list {
+    @extend .navbar-nav;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    padding-top: 2px;
+    width: 87.5%;
+  }
+  .aspid-menu__item {
+    box-shadow: inset 0 -0.5px 0 0 #416D96;
+    height: 48px;
+    list-style: none;
+    padding-top: 21px;
+  }
+  .aspid-menu__item-link {
+    color: $menuText;
+
+    &:hover {
+      color: lighten($menuText, 20%);
+    }
+    &:active {
+      color: darken($menuText, 20%);
+    }
+  }
+}
+
+.menu-box {
+  align-items: center;
+  background: none;
+  display: flex;
+  font-family: $openSans;
+  font-size: 20px;
+  font-weight: 600;
+  justify-content: flex-end;
+  height: 66px;
+  line-height: 27px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 158px;
+
+  button {
+    border: none;
+    display: flex;
+    margin: 12px;
+    right: 0;
+  }
+  &__open {
+    color: $baseBackground;
+    display: none;
+    justify-content:space-around;
+
+    &:nth-child(1) {
+      display: flex;
+      padding: .5em;
+      text-transform: uppercase;
+    }
+    span {
+      margin-right: 26px;
+    }
+  }
+  &__hamb {
+    display: flex;
+  }
+}
+
+/* Header */
+.header {
+  min-height: 66px;
+  height: auto;
+  width: 100%;
+  background-color: $baseBackground;
+  box-shadow: inset 0 -1px 0 0 $baseShadow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .navbar {
+    margin: 0;
+    min-height: 66px;
+    padding: 0;
+    width: 100%;
+
+    a.navbar-brand {
+      display: flex;
+      margin: 0;
+      min-height: 66px;
+      padding: 14px;
+    }
+  }
+
+
+  .aspidpro-logo-alt {
+    height: 36px;
+    width: 166px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: .8em;
+
+    .aspidpro-logo-mark {
+      height: 34px;
+      width: 36px;
+      display: flex;
+      background-image: url("./images/logo.svg");
+      background-size: cover;
+      background-position-x: right;
+      background-position-y: bottom;
+    }
+
+    .apsidpro-logo-text {
+      height: 34.79px;
+      width: 127.19px;
+      font-family: $openSans;
+      font-size: 1.5em;
+      color: $gray;
+      display: flex;
+      font-weight: 100;
+
+      .accent-semibold {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* Footer */
+footer {
+  background-color: $footerBackground;
+  display: flex;
+  align-self: flex-end;
+
+
+  nav {
+    ul.navbar-nav {
+      font-family: $openSans;
+      font-weight: normal;
+      padding-left: 10px;
+      padding-right: 0;
+      padding-bottom: 46px;
+
+      li {
+        height: 50px;
+        padding: 16px 10px;
+        font-size: 14px;
+        border-bottom: 1px $navSeparator solid;
+        line-height: 19px;
+
+        a {
+          color: $footerText;
+
+          &:hover {
+            color: lighten($footerText, 20%);
+          }
+          &:active {
+            color: darken($footerText, 20%);
+          }
+        }
+      }
+    }
+
+    .search {
+      height: 38px;
+      padding-bottom: 30px;
+
+      input {
+        font-family: $openSans;
+        font-size: 12px;
+        line-height: 17px;
+        color: $footerBackground;
+        border: 1px $white solid;
+        box-sizing: border-box;
+      }
+      .btn-srch {
+        border: 1px $white solid;
+        border-radius: 0;
+        font-size: 2rem;
+        background-color: $footerBackground;
+        padding: 0 .8rem;
+        box-sizing: border-box;
+
+        .fa {
+          padding: 0;
+          color: $white;
+        }
+        .fa-angle-right {
+          padding: 0;
+        }
+      }
+    }
+
+
+  }
+  .copyright-2017-asp {
+    margin: 0 auto;
+    padding-top: 36px;
+    padding-bottom: 20px;
+    height: 11px;
+    width: 269px;
+    color: $white;
+    font-family: $openSans;
+    font-size: 8px;
+    line-height: 11px;
+    text-align: center;
+  }
+}
