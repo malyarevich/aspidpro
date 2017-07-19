@@ -91,6 +91,18 @@
     display: flex;
     margin: 12px;
     right: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      border: none;
+      outline: none;
+    }
+    &:focus {
+      border: none;
+      outline: 0;
+    }
   }
   &__open {
     color: $baseBackground;
