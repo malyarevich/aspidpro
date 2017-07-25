@@ -1,4 +1,5 @@
 jQuery( document ).ready(function () {
+    /* Hamb behavior */
     jQuery(".menu-box__open").hide(1000);
     jQuery(".menu-box button").click(function () {
         if ( jQuery(".navbar-collapse").is(":visible") ) {
@@ -11,4 +12,11 @@ jQuery( document ).ready(function () {
             jQuery(".menu-box").css("background-color", "rgba(80, 134, 185, 1)");
         }
     });
+    /* END Hamb behavior */
+
+    /* Carousel */
+    $('.carousel').carousel({
+        interval: 9999999
+    })
+    /* END Carousel */
 });

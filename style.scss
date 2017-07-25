@@ -14,6 +14,10 @@
 /* BASE RULES */
 /**************/
 
+* {
+  @extend .clearfix;
+}
+
 html {
   font-size: 100%;
 }
@@ -25,49 +29,24 @@ body {
   min-height: 100%;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 740px;
+.container-fluid {
+  margin: 0 0;
   padding: 0 0;
   width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
-  color: $darkerGray;
-  font-weight: bold;
 
-  line-height: 1.7;
-  margin: 1em 0 15px;
-  padding: 0;
-
+  a {
+    color: inherit;
+  }
   @include mobile {
     line-height: 1.4;
   }
 }
 
-h1 {
-  font-size: 30px;
-  a {
-    color: inherit;
-  }
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-h4 {
-  font-size: 18px;
-  color: $gray;
-}
-
 p {
-  margin: 15px 0;
+  margin: 0 0;
 }
 
 a {
