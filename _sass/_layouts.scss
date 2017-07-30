@@ -4,6 +4,7 @@
 .loading-screen {
   background-color: $white;
   background-image: url($baseurl + "/images/logo.svg");
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: contain;
   height: 100vh;
