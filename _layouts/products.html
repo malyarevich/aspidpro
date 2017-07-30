@@ -2,16 +2,47 @@
 layout: default
 ---
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
+<div class="aspid-products">
 
-  <div class="entry">
-    {{ content }}
-  </div>
+    {% for post in site.posts %}
+        {% if post.categories contains 'product' %}
+    <div class="aspid-product-item">
+        <a href="{{ site.baseurl }}{{ post.url }}" class="aspid-product-item__link">
+            <div class="aspid-product-item__image">
+                {{ post.excerpt }}
+            </div>
+            <div class="aspid-product-item__info">
+                <div class="aspid-product-item__caption">
+                    <div class="aspid-product-item__title">
+                        <h2>{{ post.title }}</h2>
+                    </div>
+                    <div class="aspid-product-item__volume">
+                        {{ post.volume }}
+                    </div>
+                </div>
+                <div class="aspid-product-item__description">
+                    {{ post.description }}
+                </div>
+            </div>
+        </a>
+    </div>
+        {% endif %}
+    {% endfor %}
+</div>
+<nav id="menu-divs">
+    <h1 class="aspid-h1">Explora Nuestros Productos</h1>
+    <nav class="nav flex-column nav-borders">
+        <a class="nav-link active" href="#"><span>Tipo de Piel</span><i class="fa fa-angle-right"
+                                                                        aria-hidden="true"></i></a>
+        <a class="nav-link" href="#"><span>Nuestras Líneas</span><i class="fa fa-angle-right"
+                                                                    aria-hidden="true"></i></a>
+        <a class="nav-link" href="#"><span>Equipo Técnico</span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </nav>
+</nav>
 
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
-  </div>
-
-  {% include disqus.html %}
-</article>
+<div class="banner down-banner">
+    <a href="{{ site.baseurl }}/talleres/">
+        <img src="{{ site.baseurl }}/images/assets/promo-02.png" class="hidden-sm-up" alt="promo">
+        <img src="{{ site.baseurl }}/images/assets/promo-02@2x.png" class="hidden-xs-down" alt="promo-x2">
+    </a>
+</div>

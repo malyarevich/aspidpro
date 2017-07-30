@@ -1,13 +1,13 @@
 <nav class="col-12 clearfix">
     <ul class="navbar-nav mr-auto clearfix">
         <li class="nav-item">
-            <a class="nav-link" href="{{ site.baseurl | replace: '//', '/' }}/about/">¿Quiénes Somos?</a>
+            <a class="nav-link{% if page.title == '¿Quiénes Somos?' %} active {% endif %}" href="{{ site.baseurl | replace: '//', '/' }}/about/">¿Quiénes Somos?</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ site.baseurl | replace: '//', '/' }}/franquicias/">Distribuidores Autorizados</a>
+            <a class="nav-link{% if page.title == 'Distribuidores Autorizados' %} active {% endif %}" href="{{ site.baseurl | replace: '//', '/' }}/franquicias/">Distribuidores Autorizados</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ site.baseurl | replace: '//', '/' }}/talleres/">Talleres y Diplomados</a>
+            <a class="nav-link{% if page.title == 'Talleres y Diplomados' %} active {% endif %}" href="{{ site.baseurl | replace: '//', '/' }}/talleres/">Talleres y Diplomados</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ site.baseurl | replace: '//', '/' }}/">Contáctanos</a>

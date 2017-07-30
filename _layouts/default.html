@@ -7,17 +7,18 @@
   </head>
 
   <body>
-    <header class="">
+  {% include loading-screen.html %}
+    <header class="header" style="display: none">
 
       {% include header.html %}
 
     </header>
 
-    <main class="container-fluid">
+    <main class="container-fluid" style="display: none">
       {{ content }}
     </main>
 
-    <footer class="footer">
+    <footer class="footer" style="display: none">
       {% include footer.html %}
     </footer>
 

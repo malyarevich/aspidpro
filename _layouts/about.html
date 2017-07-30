@@ -2,16 +2,50 @@
 layout: default
 ---
 
-<article class="post">
+<div class="aspid-caption">
   <h1>{{ page.title }}</h1>
+</div>
 
-  <div class="entry">
-    {{ content }}
+<div class="aspid-text">
+  <p>Somos la empresa que evoluciona la ciencia cosmecéutica en México desde hace más de 36 años. Cuidamos y mantenemos la piel sana y bella (tanto de hombres como de mujeres de todas las edades a través de la investigación y el desarrollo de productos cosmeceúticos.</p>
+</div>
+
+<div class="banner">
+  <a href="{{ site.baseurl }}/talleres/">
+    <img src="{{ site.baseurl }}/images/assets/promo-03.png" class="hidden-sm-up" alt="promo">
+    <img src="{{ site.baseurl }}/images/assets/promo-03@2x.png" class="hidden-xs-down" alt="promo-x2">
+  </a>
+</div>
+
+<div class="aspid-text">
+  <p>Los productos ASPIDPRO son de las más alta calidad. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+</div>
+
+<div class="product-group">
+  <div class="product-group__visual">
+    <div class="product-group__img">
+      <img src="{{ site.baseurl }}/images/assets/product-01.png" class="hidden-sm-up" alt="product">
+      <img src="{{ site.baseurl }}/images/assets/product-01@2x.png" class="hidden-xs-down" alt="product-x2">
+    </div>
   </div>
-
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
+  <div class="product-group__text">
+    <div class="product-group__title">Aspidessence</div>
+    <div class="product-group__type">Clarificante</div>
+    <div class="product-group__description">Mezcla de aceites esenciales (naranja)</div>
   </div>
+</div>
 
-  {% include disqus.html %}
-</article>
+<div class="product-group product-group--reverse">
+  <div class="product-group__visual">
+    <div class="product-group__img">
+      <img src="{{ site.baseurl }}/images/assets/product-02.png" class="hidden-sm-up" alt="product">
+      <img src="{{ site.baseurl }}/images/assets/product-02@2x.png" class="hidden-xs-down" alt="product-x2">
+    </div>
+  </div>
+  <div class="product-group__text">
+    <div class="product-group__title">Aspidessence</div>
+    <div class="product-group__type">Clarificante</div>
+    <div class="product-group__description">Mezcla de aceites esenciales (naranja)</div>
+  </div>
+</div>
+

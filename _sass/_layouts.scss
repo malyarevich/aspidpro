@@ -1,6 +1,14 @@
 /*********************/
 /* LAYOUT / SECTIONS */
 /*********************/
+.loading-screen {
+  background-color: $white;
+  background-image: url($baseurl + "/images/logo.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+  width: 100vw;
+}
 
 .iconnav {
   margin: 0 auto;
@@ -48,9 +56,14 @@
     margin: 0;
     height: 66px;
     order: -1;
-    padding: 14px 0px 14px 6px;
-    width: 220px;
-  }//.logo
+    padding: 14px 0px 14px 8px;
+    width: calc(100vw - 180px);
+
+    a {
+      width: 180px;
+    }
+  }
+  //.logo
   .menu-box {
     align-items: center;
     background: none;
@@ -62,7 +75,7 @@
     line-height: 27px;
     order: 5;
     height: 66px;
-    width: 158px;
+    width: 160px;
 
     button {
       border: none;
@@ -80,7 +93,8 @@
         border: none;
         outline: 0;
       }
-    }//button
+    }
+    //button
     &__open {
       color: $baseBackground;
       display: none;
@@ -100,12 +114,16 @@
       margin-right: 4px;
       margin-top: 4px;
     }
-  }//.menu-box
+  }
+  //.menu-box
   .aspid-menu {
+    align-items: flex-start;
     background: linear-gradient(180deg, #5086B9 0%, #416D96 100%);
+    flex-direction: column;
     font-family: $openSans;
     font-size: 14px;
     font-weight: 300;
+    justify-content: center;
     line-height: 22px;
     order: 10;
     text-align: center;
@@ -116,6 +134,7 @@
     .aspid-menu__list {
       @extend .navbar-nav;
       margin: 0 auto;
+      order: -1;
       padding-bottom: 60px;
       padding-top: 2px;
       width: 87.5%;
@@ -128,18 +147,26 @@
     }
     .aspid-menu__item-link {
       color: $menuText;
+      font-size: 14px;
+      font-weight: 300;
 
-      &:hover {
-        color: lighten($menuText, 20%);
-      }
       &:active {
-        color: darken($menuText, 20%);
+        color: darken($menuText, 10%);
+        font-weight: 400;
+      }
+      &:focus {
+        text-decoration: none;
+        font-weight: 400;
+      }
+      &:hover {
+        color: lighten($menuText, 30%);
+        font-weight: 500;
+        text-decoration: none;
       }
     }
-  }//.aspid-menu
+  }
+  //.aspid-menu
 }
-
-
 
 /* Header */
 .header {
@@ -159,7 +186,6 @@
     width: 100%;
   }
 
-
   .aspidpro-logo-alt {
     height: 36px;
     width: 166px;
@@ -172,7 +198,7 @@
       height: 34px;
       width: 36px;
       display: flex;
-      background-image: url("./images/logo.svg");
+      background-image: url($baseurl + "/images/logo.svg");
       background-size: cover;
       background-position-x: right;
       background-position-y: bottom;
@@ -200,7 +226,6 @@ footer {
   display: flex;
   align-self: flex-end;
 
-
   nav {
     ul.navbar-nav {
       font-family: $openSans;
@@ -218,12 +243,17 @@ footer {
 
         a {
           color: $footerText;
+          font-weight: normal;
+          opacity: 0.87;
 
           &:hover {
             color: lighten($footerText, 20%);
           }
           &:active {
             color: darken($footerText, 20%);
+          }
+          &.active {
+            font-weight: bold;
           }
         }
       }
@@ -259,7 +289,6 @@ footer {
       }
     }
 
-
   }
   .copyright-2017-asp {
     margin: 0 auto;
@@ -274,79 +303,126 @@ footer {
     text-align: center;
   }
 }
+/* END Footer */
 
 /* General */
+.aspid-caption {
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+  h1 {
+    color: $gray;
+    font-family: $openSans;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+    height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.aspid-text {
+  padding-left: 18px;
+  padding-right: 12px;
+  padding-bottom: 17px;
+
+  p {
+    color: $darkenGray;
+    font-family: $openSans;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 21px;
+  }
+}
+
 /*product-item*/
 .aspid-products {
   align-items: flex-start;
   display: flex;
   justify-content: space-around;
+  flex-direction: row;
   margin-top: 12px;
-}
-.aspid-product-item {
-  flex-direction: column;
-  margin: 0 3vw;
-  width: 44vw;
+  flex-wrap: wrap;
 
-  &__link {
-    color: inherit;
-    display: flex;
+  .aspid-product-item {
     flex-direction: column;
-    justify-content: center;
-    text-decoration: none;
+    margin: 0 3vw;
+    width: 40vw;
 
-    &:active {
-      color: $gray;
-      text-decoration: none;
-    }
-    &:hover {
-      color: $darkGray;
-      text-decoration: none;
-    }
-  }
-  &__image {
-    align-items: center;
-    display: flex;
-    height: 180px;
-    justify-content: center;
-    order: -1;
-    width: 180px;
-
-    p {
+    &__link {
+      color: inherit;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
+      text-decoration: none;
 
+      &:active {
+        color: $gray;
+        text-decoration: none;
+      }
+      &:hover {
+        color: $darkGray;
+        text-decoration: none;
+      }
+    }
+    &__image {
+      align-items: center;
+      display: flex;
+      height: 180px;
+      justify-content: center;
+      order: -1;
+      width: 180px;
+
+      p {
+        justify-content: center;
+
+      }
+    }
+    &__info {
+      color: $gray;
+      display: flex;
+      flex-direction: column;
+      font-family: $openSans;
+      font-size: 11px;
+      font-weight: 300;
+      order: 5;
+      padding-left: 10px;
+    }
+    &__caption {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &__title {
+      color: $darkGray;
+      display: flex;
+      font-size: 12px;
+      font-weight: 600;
+      order: -1;
+    }
+    &__volume {
+      align-items: center;
+      display: flex;
+      order: 5;
+    }
+    &__description {
+      display: flex;
     }
   }
-  &__info {
-    color: $gray;
-    display: flex;
-    flex-direction: column;
-    font-family: $openSans;
-    font-size: 11px;
-    font-weight: 300;
-    order: 5;
-    padding-left: 10px;
+}
+
+.banner {
+  margin: 5px;
+
+  img {
+    width: 100%;
+    height: auto;
   }
-  &__caption {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  &__title {
-    color: $darkGray;
-    display: flex;
-    font-size: 12px;
-    font-weight: 600;
-    order: -1;
-  }
-  &__volume {
-    align-items: center;
-    display: flex;
-    order: 5;
-  }
-  &__description {
-    display: flex;
-  }
+}
+
+.down-banner {
+  margin: 36px 5px 42px 5px;
 }
 
 /* END General */
@@ -401,7 +477,7 @@ footer {
     }
 
     i {
-      color: lighten($gray,30%);
+      color: lighten($gray, 30%);
       font-size: 28px;
       line-height: 19pt;
       order: 5;
@@ -411,6 +487,8 @@ footer {
 
 .hero-base {
   background-color: rgba(123, 216, 216, 1);
+  background-image: url($baseurl + "/images/assets/hero-bg.png");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -445,6 +523,7 @@ footer {
     }
   }
 }
+
 section {
   .posts {
 
@@ -472,7 +551,7 @@ section {
           margin-right: 5px;
 
           &.active {
-            background-color: rgba(80,134,185,1);
+            background-color: rgba(80, 134, 185, 1);
           }
         }
       }
@@ -480,16 +559,187 @@ section {
         order: 5;
         flex-direction: column-reverse;
 
-
       }
     }
   }
 }
-.organika {
-  margin: 96px 5px 52px 5px;
 
-  img {
-    width: 100%;
-    height: auto;
+/* Talleres */
+.events-box {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+.item-event {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 26px;
+
+  &__left {
+    align-items: flex-start;
+    align-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+  }
+  &__title {
+    color: $darkGray;
+    display: flex;
+    font-family: $openSans;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 17px;
+    margin-bottom: 6px;
+  }
+  &__time {
+    color: $gray;
+    display: flex;
+    font-family: $openSans;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+  &__subscr {
+    border-color: #5086B9;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+    color: #5086B9;
+    display: flex;
+    font-family: $openSans;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    height: 26px;
+    line-height: 14px;
+    padding: 5px 37.5px 7px 37.5px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 132px;
+
+  }
+  &__right {
+    display: flex;
+
+  }
+  &__img {
+    display: flex;
+
   }
 }
+
+/* END Talleres */
+
+/* About */
+.product-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 36px 7px 18px 12px;
+
+  &__visual {
+    flex-direction: column;
+    max-width: 45vw;
+  }
+  &__img {
+
+  }
+  &__text {
+    flex-direction: column;
+    max-width: 45vw;
+  }
+  &__title {
+    color: $gray;
+    height: 37px;
+    width: 139px;
+    font-family: $openSans;
+    font-size: 22px;
+    line-height: 37px;
+  }
+  &__type {
+    color: lighten($gray, 33.3%);
+    font-family: $openSans;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+  }
+  &__description {
+    color: $gray;
+    font-family: $openSans;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 17px;
+  }
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* END About */
+/* Franquicias */
+.franq-category {
+  border-bottom-color: darken($lightGray, 8%);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 28px;
+
+  h2 {
+    color: darken($gray, 8%);
+    font-family: $openSans;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+  }
+}
+
+.franq-item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 14px;
+  margin-right: 13px;
+
+  &__text {
+    color: darken($gray, 8%);
+    display: flex;
+    flex-direction: column;
+    font-family: $openSans;
+    font-size: 15px;
+    line-height: 21px;
+    margin-left: 14px;
+  }
+  &__title {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 25px;
+
+  }
+  &__address {
+    font-weight: 300;
+    line-height: 24px;
+  }
+  &__tel {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 32px;
+  }
+  &__email {
+
+  }
+  &__visual {
+    display: flex;
+    flex-direction: column;
+  }
+  &__card {
+
+  }
+}
+
+/* END franquicias */

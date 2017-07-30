@@ -1,20 +1,51 @@
 ---
 layout: default
 ---
+<div class="aspid-caption">
+    <h1>{{ page.title }}</h1>
+</div>
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
+<div class="aspid-text">
+    <p>Somos la empresa que evoluciona la ciencia cosmecéutica en México desde hace más de 36 años. Cuidamos y
+        mantenemos la piel sana y bella (tanto de hombres como de mujeres de todas las edades a través de la
+        investigación y el desarrollo de productos cosmeceúticos.</p>
+</div>
 
-  <p>Somos la empresa que evoluciona la ciencia cosmecéutica en México desde hace más de 36 años. Cuidamos y mantenemos la piel sana y bella (tanto de hombres como de mujeres de todas las edades a través de la investigación y el desarrollo de productos cosmeceúticos.</p>
-  <img src="" alt="pictures">
+<div class="banner">
+    <a href="{{ site.baseurl }}/talleres/">
+        <img src="{{ site.baseurl }}/images/assets/promo-04.png" class="hidden-sm-up" alt="promo">
+        <img src="{{ site.baseurl }}/images/assets/promo-04@2x.png" class="hidden-xs-down" alt="promo-x2">
+    </a>
+</div>
+<div class="aspid-caption">
+    <h1>Calendario de Eventos</h1>
+</div>
 
-  <h1>Calendario de Eventos</h1>
-  <div>
-    <div class="title"> Curso de sombras y polvos</div>
-    <div class="time">Sábado Abril 22, 12PM - 6PM <br>
-    Sábadado April 29, 12PM - 6PM</div>
-    <div class="subscr"></div>
-    <img src="" alt="">
-  </div>
+<div class="event-box">
+    {% for post in site.posts %}
+        {% if post.categories contains 'event' %}
+    <div class="item-event">
+        <div class="item-event__left">
+            <div class="item-event__title"> {{ post.title }} </div>
+            <div class="item-event__time">
+                {{ post.description }}
+            </div>
+            <a href="#" class="item-event__subscr">Inscríbete</a>
+        </div>
 
-</article>
+        <div class="item-event__right">
+            <img class="item-event__img hidden-md-up" src="{{ site.baseurl }}/{{ post.img }}" alt="event">
+            <img class="item-event__img hidden-sm-down" src="{{ site.baseurl }}/{{ post.img2x }}" alt="event">
+        </div>
+    </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="banner down-banner">
+    <a href="{{ site.baseurl }}/products/">
+        <img src="{{ site.baseurl }}/images/assets/promo-05.png" class="hidden-sm-up" alt="promo">
+        <img src="{{ site.baseurl }}/images/assets/promo-05@2x.png" class="hidden-xs-down" alt="promo-x2">
+    </a>
+</div>
+

@@ -8,6 +8,7 @@ status: published
 type: post
 published: true
 comments: true
+category: product
 ---
 ![_config.yml]({{ site.baseurl }}/images/products/producto-02.png)
 

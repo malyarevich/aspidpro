@@ -14,28 +14,37 @@ layout: default
         <h1 class="aspid-h1">Productos Nuevos</h1>
         <div id="carouselProductIndicators" class="carousel slide" data-ride="carousel" data-interval="false" >
             <ol class="carousel-indicators">
+                {% assign notproductcount = 0 %}
                 {% for post in site.posts %}
-                    {% assign loopindex = forloop.index %}
-                    {% assign loopindex_inc = loopindex | plus: 1 %}
-                    {% assign compare_1 = loopindex_inc | modulo: 2 %}
-                    {% assign compare_2 = loopindex_inc | divided_by: 2 %}
-                    {% assign compare_3 = compare_2 | minus: 1 %}
-                    {% if compare_1 == 0 %}
-                        {% if loopindex == 1 %}
-                            <li data-target="#carouselProductIndicators" data-slide-to="{{compare_3}}" class="active">
-                        {% else %}
-                            <li data-target="#carouselProductIndicators" data-slide-to="{{compare_3}}">
-                        {% endif %}
-                    {% endif %}
-                    </li>
 
-                    {% capture looplenth %}
-                        {{loopindex}}
-                    {% endcapture %}
+                    {% if post.categories contains 'product' %}
+                        {% assign loopindex = forloop.index %}
+                        {% assign loopindex_p = loopindex | minus: notproductcount %}
+                        {% assign loopindex_inc = loopindex_p | plus: 1 %}
+                        {% assign compare_1 = loopindex_inc | modulo: 2 %}
+                        {% assign compare_2 = loopindex_inc | divided_by: 2 %}
+                        {% assign compare_3 = compare_2 | minus: 1 %}
+                        {% if compare_1 == 0 %}
+                            {% if loopindex_p == 1 %}
+                                <li data-target="#carouselProductIndicators" data-slide-to="{{compare_3}}" class="active">
+                            {% else %}
+                                <li data-target="#carouselProductIndicators" data-slide-to="{{compare_3}}">
+                            {% endif %}
+                        {% endif %}
+                        </li>
+
+                        {% capture looplenth %}
+                            {{loopindex_p}}
+                        {% endcapture %}
+
+                    {% else %}
+                        {% assign notproductcount = notproductcount | plus: 1 %}
+
+                    {% endif %}
                 {% endfor %}
 
             </ol>
-            
+
             <div class="carousel-inner" role="listbox">
             {% for counter in (1..looplenth) %}
 
@@ -44,66 +53,84 @@ layout: default
                     {% if compare_1 == 1 %}
 
                         {% if counter == 1 %}
-                            <div class="carousel-item active">
+                <div class="carousel-item active">
                             {% else %}
-                            <div class="carousel-item">
+                <div class="carousel-item">
                         {% endif %}
-                                <div class="aspid-products">
+
+                    <div class="aspid-products">
+
+                        {% assign notproductcount = 0 %}
                         {% for post in site.posts %}
-                            {% assign loopindex = forloop.index %}
 
-                            {% if loopindex == counter %}
-                                {% assign c_flag_show = true %}
-                            {% else %}
-                                {% assign c_flag_show = false %}
+                            {% if post.categories contains 'product' %}
+                                {% assign loopindex = forloop.index | minus: notproductcount %}
 
-                                {% if loopindex == counter_inc %}
-                                {% assign c_flag_show = true %}
+                                {% if loopindex == counter %}
+                                    {% assign c_flag_show = true %}
                                 {% else %}
-                                {% assign c_flag_show = false %}
+                                    {% assign c_flag_show = false %}
+
+                                    {% if loopindex == counter_inc %}
+                                        {% assign c_flag_show = true %}
+                                    {% else %}
+                                        {% assign c_flag_show = false %}
+                                    {% endif %}
                                 {% endif %}
-                            {% endif %}
 
 
-                            {% if c_flag_show %}
-                                    <div class="aspid-product-item">
-                                        <a href="{{ site.baseurl }}{{ post.url }}" class="aspid-product-item__link">
-                                            <div class="aspid-product-item__image">
-                                                {{ post.excerpt }}
-                                            </div>
-                                            <div class="aspid-product-item__info">
-                                                <div class="aspid-product-item__caption">
-                                                    <div class="aspid-product-item__title"><h2>{{ post.title }}</h2></div>
-                                                    <div class="aspid-product-item__volume">{{ post.volume }}</div>
-                                                </div>
-                                                <div class="aspid-product-item__description">{{ post.description }}</div>
-                                            </div>
-                                        </a>
+                                {% if c_flag_show %}
+                        <div class="aspid-product-item">
+                            <a href="{{ site.baseurl }}{{ post.url }}" class="aspid-product-item__link">
+                                <div class="aspid-product-item__image">
+                                    {{ post.excerpt }}
+                                </div>
+                                <div class="aspid-product-item__info">
+                                    <div class="aspid-product-item__caption">
+                                        <div class="aspid-product-item__title"><h2>{{ post.title }}</h2></div>
+                                        <div class="aspid-product-item__volume">{{ post.volume }}</div>
                                     </div>
+                                    <div class="aspid-product-item__description">{{ post.description }}</div>
+                                </div>
+                            </a>
+                        </div>
+                                {% endif %}
+                            {% else %}
+
+                                {% assign notproductcount = notproductcount | plus: 1 %}
+
                             {% endif %}
 
                         {% endfor %}
-                                </div>
-                            </div>
+
+                    </div>
+                        {% if counter == 1 %}
+                </div>
+                        {% else %}
+                </div>
+                        {% endif %}
                     {% endif %}
             {% endfor %}
-                
+
             </div>
         </div>
-        
+
 
     </div>
 </section>
+
 <nav id="menu-divs">
     <h1 class="aspid-h1">Conoce Más</h1>
     <nav class="nav flex-column nav-borders">
-        <a class="nav-link active" href="#"><span>Productos y Líneas</span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <a class="nav-link active" href="{{ site.baseurl }}/products/"><span>Productos y Líneas</span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
         <a class="nav-link" href="#"><span>Tips y Consejos</span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
         <a class="nav-link" href="#"><span>Blog</span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
     </nav>
 </nav>
-<div class="organika">
-    <a href="#">
-        <img src="{{ site.baseurl }}/images/organika.png" alt="organika">
+
+<div class="banner down-banner">
+    <a href="{{ site.baseurl }}/products/">
+        <img src="{{ site.baseurl }}/images/assets/promo-01.png" class="hidden-sm-up" alt="promo">
+        <img src="{{ site.baseurl }}/images/assets/promo-01@2x.png" class="hidden-xs-down" alt="promo-x2">
     </a>
 </div>
