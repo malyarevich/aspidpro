@@ -5,11 +5,11 @@
 i.fa {
   font-size: 23px;
   position: relative;
-  text-shadow: 5px 5px 5px rgba(50, 50, 50, .6);
+  text-shadow: 3px 3px 2px rgba(50, 50, 50, .5);
   &:hover {
-    top: .04rem;
-    left: .04rem;
-    text-shadow: 2px 3px 7px rgba(50, 50, 50, .6);
+    top: .02rem;
+    left: .02rem;
+    text-shadow: 1px 1px 4px rgba(50, 50, 50, .5);
   }
 }
 
@@ -466,34 +466,40 @@ footer {
 }
 .carousel-control-next {
   opacity: 1;
+  display: flex;
+  justify-content: flex-end;
 
   .fa {
+    top: -.04rem;
+    left: -.04rem;
+    margin-right: 1rem;
+    margin-bottom: 3rem;
     color: #5086b9;
     height: 2rem;
     position: relative;
-    left: 3rem;
-    bottom: 2rem;
     font-size: 2rem;
     text-shadow: 4px 4px 3px rgba(150, 150, 150, .7);
     &:hover {
-      bottom: 1.9rem;
+      top: 0;
+      left: 0;
       text-shadow: 2px 3px 5px rgba(150, 150, 150, .7);
     }
   }
 }
 .carousel-control-prev {
   opacity: 1;
+  display: flex;
+  justify-content: flex-start;
 
   .fa {
+    margin-left: 1rem;
+    margin-bottom: 3rem;
     color: #5086b9;
     height: 2rem;
     position: relative;
-    right: 3rem;
-    bottom: 2rem;
     font-size: 2rem;
     text-shadow: 4px 4px 3px rgba(150, 150, 150, .7);
     &:hover {
-      bottom: 1.9rem;
       text-shadow: 2px 3px 5px rgba(150, 150, 150, .7);
     }
   }
