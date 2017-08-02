@@ -6,7 +6,7 @@ layout: default
 
     {% for post in site.posts %}
         {% if post.categories contains 'product' %}
-    <div class="aspid-product-item">
+    <div class="aspid-product-item col-6 col-md-4 col-lg-3">
         <a href="{{ site.baseurl }}{{ post.url }}" class="aspid-product-item__link">
             <div class="aspid-product-item__image">
                 {{ post.excerpt }}
@@ -29,20 +29,22 @@ layout: default
         {% endif %}
     {% endfor %}
 </div>
-<nav id="menu-divs">
-    <h1 class="aspid-h1">Explora Nuestros Productos</h1>
-    <nav class="nav flex-column nav-borders">
-        <a class="nav-link active" href="#"><span>Tipo de Piel</span><i class="fa fa-angle-right"
+<div class="aspid-double">
+    <nav class="aspid-menu-divs" id="menu-divs">
+        <h1 class="aspid-h1">Explora Nuestros Productos</h1>
+        <nav class="nav flex-column nav-borders">
+            <a class="nav-link active" href="#"><span>Tipo de Piel</span><i class="fa fa-angle-right"
+                                                                            aria-hidden="true"></i></a>
+            <a class="nav-link" href="#"><span>Nuestras Líneas</span><i class="fa fa-angle-right"
                                                                         aria-hidden="true"></i></a>
-        <a class="nav-link" href="#"><span>Nuestras Líneas</span><i class="fa fa-angle-right"
-                                                                    aria-hidden="true"></i></a>
-        <a class="nav-link" href="#"><span>Equipo Técnico</span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a class="nav-link" href="#"><span>Equipo Técnico</span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </nav>
     </nav>
-</nav>
 
-<div class="banner down-banner">
-    <a href="{{ site.baseurl }}/talleres/">
-        <img src="{{ site.baseurl }}/images/assets/promo-02.png" class="hidden-sm-up" alt="promo">
-        <img src="{{ site.baseurl }}/images/assets/promo-02@2x.png" class="hidden-xs-down" alt="promo-x2">
-    </a>
+    <div class="banner down-banner">
+        <a href="{{ site.baseurl }}/talleres/">
+            <img src="{{ site.baseurl }}/images/assets/promo-02.png" class="hidden-sm-up" alt="promo">
+            <img src="{{ site.baseurl }}/images/assets/promo-02@2x.png" class="hidden-xs-down" alt="promo-x2">
+        </a>
+    </div>
 </div>

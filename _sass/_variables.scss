@@ -34,9 +34,7 @@ $roboto:  'Roboto', sans-serif;
 $openSans: 'Open Sans', sans-serif;
 $fontAwesome: FontAwesome;
 
-// Mobile breakpoints
-@mixin mobile {
-  @media screen and (max-width: 640px) {
-    @content;
-  }
-}
+$xsmall: 34rem;
+$small:  48rem;
+$medium: 62rem;
+$large:  75rem;

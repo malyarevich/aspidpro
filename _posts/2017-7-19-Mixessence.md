@@ -1,6 +1,6 @@
 ---
 layout: event
-title: Mixessence 2
+title: Mixessence
 volume: 30ml
 description: Gel contorno de ojos para tоdo tipo de piel
 img: images/asset/event-01.png
