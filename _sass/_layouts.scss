@@ -5,6 +5,8 @@
 i.fa {
   font-size: 23px;
   position: relative;
+  top: 0;
+  left: 0;
   // text-shadow: 3px 3px 2px rgba(50, 50, 50, .5);
   &:hover {
     top: .02rem;
@@ -51,9 +53,11 @@ i.fa {
       i.fa {
         font-size: 23px;
         position: relative;
+        top: 0;
+        left: 0;
         // text-shadow: 5px 5px 5px rgba(50, 50, 50, .6);
         &:hover {
-          top: .04rem;
+          top: .14rem;
           left: .04rem;
           // text-shadow: 2px 3px 7px rgba(50, 50, 50, .6);
         }
@@ -498,8 +502,12 @@ footer {
     height: 2rem;
     position: relative;
     font-size: 2rem;
+    top: -.04rem;
+    left: -.04rem;
     // text-shadow: 4px 4px 3px rgba(150, 150, 150, .7);
     &:hover {
+      top: 0;
+      left: 0;
       // text-shadow: 2px 3px 5px rgba(150, 150, 150, .7);
     }
   }
