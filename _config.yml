@@ -3,7 +3,7 @@
 #
 
 # Name of your site (displayed in the header)
-name: Luis Cielak
+name: AspidPro
 
 # Short bio or description (displayed in the header)
 description: Marketing site for www.aspidpro.com
@@ -19,16 +19,15 @@ avatar: https://avatars1.githubusercontent.com/u/349454?v=3&s=460
 footer-links:
   dribbble:
   email:
-  facebook: luiscielak/aspidpro
+  facebook: aspidpro
   flickr:
-  github: luiscielak/aspidpro
   instagram:
   linkedin:
   pinterest:
   rss: # just type anything here for a working RSS icon
-  twitter: luiscielak/aspidpro
+  twitter: aspidpro
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: luiscielak/aspidpro # channel/<your_long_string> or user/<user-name>
+  youtube: aspidpro # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
 
 

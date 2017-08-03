@@ -5,11 +5,11 @@
 i.fa {
   font-size: 23px;
   position: relative;
-  text-shadow: 3px 3px 2px rgba(50, 50, 50, .5);
+  // text-shadow: 3px 3px 2px rgba(50, 50, 50, .5);
   &:hover {
     top: .02rem;
     left: .02rem;
-    text-shadow: 1px 1px 4px rgba(50, 50, 50, .5);
+    // text-shadow: 1px 1px 4px rgba(50, 50, 50, .5);
   }
 }
 
@@ -51,11 +51,11 @@ i.fa {
       i.fa {
         font-size: 23px;
         position: relative;
-        text-shadow: 5px 5px 5px rgba(50, 50, 50, .6);
+        // text-shadow: 5px 5px 5px rgba(50, 50, 50, .6);
         &:hover {
           top: .04rem;
           left: .04rem;
-          text-shadow: 2px 3px 7px rgba(50, 50, 50, .6);
+          // text-shadow: 2px 3px 7px rgba(50, 50, 50, .6);
         }
       }
     }
@@ -123,11 +123,11 @@ i.fa {
       top: 0;
       left: 0;
 
-      text-shadow: 5px 5px 5px rgba(50, 50, 50, .6);
+      // text-shadow: 5px 5px 5px rgba(50, 50, 50, .6);
       &:hover {
         top: .04rem;
         left: .04rem;
-        text-shadow: 2px 3px 7px rgba(50, 50, 50, .6);
+        // text-shadow: 2px 3px 7px rgba(50, 50, 50, .6);
       }
       &:nth-child(1) {
         display: flex;
@@ -178,7 +178,7 @@ i.fa {
       width: 87.5%;
     }
     .aspid-menu__item {
-      box-shadow: inset 0 -0.5px 0 0 #416D96;
+      // box-shadow: inset 0 -0.5px 0 0 #416D96;
       height: 48px;
       list-style: none;
       padding-top: 21px;
@@ -212,7 +212,7 @@ i.fa {
   height: auto;
   width: 100%;
   background-color: $baseBackground;
-  box-shadow: inset 0 -1px 0 0 $baseShadow;
+  // box-shadow: inset 0 -1px 0 0 $baseShadow;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -382,7 +382,7 @@ footer {
   position: absolute;
   top: 50%;
   padding: 15px;
-  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+  // box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
   transform: translateY(-50%);
   border-radius: 50%;
   color: rgba(0, 0, 0, 0.5);
@@ -478,11 +478,11 @@ footer {
     height: 2rem;
     position: relative;
     font-size: 2rem;
-    text-shadow: 4px 4px 3px rgba(150, 150, 150, .7);
+    // text-shadow: 4px 4px 3px rgba(150, 150, 150, .7);
     &:hover {
       top: 0;
       left: 0;
-      text-shadow: 2px 3px 5px rgba(150, 150, 150, .7);
+      // text-shadow: 2px 3px 5px rgba(150, 150, 150, .7);
     }
   }
 }
@@ -498,9 +498,9 @@ footer {
     height: 2rem;
     position: relative;
     font-size: 2rem;
-    text-shadow: 4px 4px 3px rgba(150, 150, 150, .7);
+    // text-shadow: 4px 4px 3px rgba(150, 150, 150, .7);
     &:hover {
-      text-shadow: 2px 3px 5px rgba(150, 150, 150, .7);
+      // text-shadow: 2px 3px 5px rgba(150, 150, 150, .7);
     }
   }
 }
@@ -508,14 +508,14 @@ footer {
   margin-top: 1.5rem;
 
   li {
-    -webkit-box-shadow: 5px 5px 5px rgba(150, 150, 150, .5);
-    -moz-box-shadow: 5px 5px 5px rgba(150, 150, 150, .5);
-    box-shadow: 5px 5px 5px rgba(150, 150, 150, .5);
+    // -webkit-box-shadow: 5px 5px 5px rgba(150, 150, 150, .5);
+    // -moz-box-shadow: 5px 5px 5px rgba(150, 150, 150, .5);
+    // box-shadow: 5px 5px 5px rgba(150, 150, 150, .5);
     &:hover {
       top: .1rem;
-      -webkit-box-shadow: 2px 2px 5px rgba(150, 150, 150, .5);
-      -moz-box-shadow: 2px 2px 5px rgba(150, 150, 150, .5);
-      box-shadow: 3px 3px 7px rgba(150, 150, 150, .5);
+      // -webkit-box-shadow: 2px 2px 5px rgba(150, 150, 150, .5);
+      // -moz-box-shadow: 2px 2px 5px rgba(150, 150, 150, .5);
+      // box-shadow: 3px 3px 7px rgba(150, 150, 150, .5);
     }
   }
 }
@@ -791,14 +791,14 @@ footer {
       font-weight: 600;
       position: relative;
       text-transform: uppercase;
-      -webkit-box-shadow: 5px 5px 5px rgba(150, 150, 150, .3);
-      -moz-box-shadow: 5px 5px 5px rgba(150, 150, 150, .3);
-      box-shadow: 5px 5px 5px rgba(150, 150, 150, .3);
+      // -webkit-box-shadow: 5px 5px 5px rgba(150, 150, 150, .3);
+      // -moz-box-shadow: 5px 5px 5px rgba(150, 150, 150, .3);
+      // box-shadow: 5px 5px 5px rgba(150, 150, 150, .3);
       &:hover {
         top: .05rem;
-        -webkit-box-shadow: 2px 2px 5px rgba(150, 150, 150, .3);
-        -moz-box-shadow: 2px 2px 5px rgba(150, 150, 150, .3);
-        box-shadow: 3px 3px 7px rgba(150, 150, 150, .3);
+        // -webkit-box-shadow: 2px 2px 5px rgba(150, 150, 150, .3);
+        // -moz-box-shadow: 2px 2px 5px rgba(150, 150, 150, .3);
+        // box-shadow: 3px 3px 7px rgba(150, 150, 150, .3);
       }
     }
   }
