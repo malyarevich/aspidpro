@@ -123,11 +123,11 @@ i.fa {
       top: 0;
       left: 0;
 
-      text-shadow: 5px 5px 5px rgba(50, 50, 50, .6)!important;
+      text-shadow: 5px 5px 5px rgba(50, 50, 50, .6);
       &:hover {
-        top: .04rem!important;
-        left: .04rem!important;
-        text-shadow: 2px 3px 7px rgba(50, 50, 50, .6)!important;
+        top: .04rem;
+        left: .04rem;
+        text-shadow: 2px 3px 7px rgba(50, 50, 50, .6);
       }
       &:nth-child(1) {
         display: flex;
@@ -980,6 +980,13 @@ section {
     font-size: 14px;
     font-weight: 600;
     line-height: 19px;
+  }
+}
+
+@media (min-width: $medium) {
+  .franq-list {
+    display: flex;
+    flex-direction: row;
   }
 }
 
