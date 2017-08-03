@@ -18,31 +18,22 @@ layout: default
                 {% assign notproductcount = 0 %}
                 {% for post in site.posts %}
 
-                {% if post.categories contains 'product' %}
-                {% assign loopindex = forloop.index %}
-                {% assign loopindex_p = loopindex | minus: notproductcount %}
-                {% assign loopindex_m = loopindex_p | minus: 1 %}
-                {% assign loopindex_inc = loopindex_p | plus: 1 %}
-                {% assign compare_1 = loopindex_inc | modulo: 2 %}
-                {% assign compare_2 = loopindex_inc | divided_by: 2 %}
-                {% assign compare_3 = compare_2 | minus: 1 %}
-                {% if loopindex_p == 1 %}
-                <li data-target="#carouselProductIndicators" data-slide-to="{{loopindex_m}}" class="active">
+                    {% if post.categories contains 'product' %}
+                        {% assign loopindex = forloop.index %}
+                        {% assign loopindex_p = loopindex | minus: notproductcount %}
+                        {% assign loopindex_m = loopindex_p | minus: 1 %}
+                        {% if loopindex_p == 1 %}
+                        <li data-target="#carouselProductIndicators" data-slide-to="{{loopindex_m}}" class="active">
+                            {% else %}
+                        <li data-target="#carouselProductIndicators" data-slide-to="{{loopindex_m}}">
+                            {% endif %}
+                        </li>
+
                     {% else %}
-                <li data-target="#carouselProductIndicators" data-slide-to="{{loopindex_m}}">
+
+                        {% assign notproductcount = notproductcount | plus: 1 %}
+
                     {% endif %}
-                    {% if compare_1 == 0 %}
-                    {% endif %}
-                </li>
-
-                {% capture looplenth %}
-                {{loopindex_p}}
-                {% endcapture %}
-
-                {% else %}
-                {% assign notproductcount = notproductcount | plus: 1 %}
-
-                {% endif %}
                 {% endfor %}
 
             </ol>
@@ -50,40 +41,41 @@ layout: default
             <div class="carousel-inner aspid-products" role="listbox">
                 {% assign notproductcount = 0 %}
                 {% for post in site.posts %}
-                {% assign counter = forloop.index %}
-                {% if post.categories contains 'product' %}
+                    {% assign counter = forloop.index %}
+                    {% if post.categories contains 'product' %}
 
-                {% if counter == 1 %}
-                <div class="carousel-item col-12 active">
-                    {% else %}
-                <div class="carousel-item col-12">
-                {% endif %}
+                        {% if counter == 1 %}
+                            <div class="carousel-item col-12 active">
+                        {% else %}
+                            <div class="carousel-item col-12">
+                        {% endif %}
 
-                    <div class="aspid-product-item col-6 col-md-4 col-lg-3" style="z-index: {{ counter }}">
-                        <a href="{{ site.baseurl }}{{ post.url }}" class="aspid-product-item__link">
-                            <div class="aspid-product-item__image">
-                                {{ post.excerpt }}
+                            <div class="aspid-product-item col-6 col-md-4 col-lg-3">
+                                <a href="{{ site.baseurl }}{{ post.url }}" class="aspid-product-item__link">
+                                    <div class="aspid-product-item__image">
+                                        {{ post.excerpt }}
+                                    </div>
+                                    <div class="aspid-product-item__info">
+                                        <div class="aspid-product-item__caption">
+                                            <div class="aspid-product-item__title"><h2>{{ post.title }}</h2></div>
+                                            <div class="aspid-product-item__volume">{{ post.volume }}</div>
+                                        </div>
+                                        <div class="aspid-product-item__description">{{ post.description }}</div>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="aspid-product-item__info">
-                                <div class="aspid-product-item__caption">
-                                    <div class="aspid-product-item__title"><h2>{{ post.title }}</h2></div>
-                                    <div class="aspid-product-item__volume">{{ post.volume }}</div>
-                                </div>
-                                <div class="aspid-product-item__description">{{ post.description }}</div>
+
+                        {% if counter == 1 %}
                             </div>
-                        </a>
-                    </div>
+                        {% else %}
+                            </div>
+                        {% endif %}
 
-                {% if counter == 1 %}
-                </div>
-                    {% else %}
-                </div>
-                {% endif %}
                     {% else %}
 
-                {% assign notproductcount = notproductcount | plus: 1 %}
+                        {% assign notproductcount = notproductcount | plus: 1 %}
 
-                {% endif %}
+                    {% endif %}
                 {% endfor %}
 
 

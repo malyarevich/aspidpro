@@ -3,14 +3,29 @@ layout: default
 ---
 
 <article class="post">
-  <h1>{{ page.title }}</h1>
+  <div class="aspid-products col-12 d-flex justify-content-center">
 
-  <div class="entry">
-    {{ content }}
+    <div class="aspid-product-item col-6 col-md-4 col-lg-3">
+      <a href="{{ site.baseurl }}{{ page.url }}" class="aspid-product-item__link">
+        <div class="aspid-product-item__image">
+          <p>
+            <img src="{{ site.baseurl }}/{{ page.img }}" alt="{{ page.title }}">
+          </p>
+        </div>
+        <div class="aspid-product-item__info">
+          <div class="aspid-product-item__caption">
+            <div class="aspid-product-item__title"><h2>{{ page.title }}</h2></div>
+            <div class="aspid-product-item__volume">{{ page.volume }}</div>
+          </div>
+          <div class="aspid-product-item__description">{{ page.description }}</div>
+        </div>
+      </a>
+    </div>
+
   </div>
 
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
+  <div class="date aspid-text">
+    <p>Written on {{ page.date | date: "%B %e, %Y" }}</p>
   </div>
 
   {% include disqus.html %}
