@@ -1,6 +1,7 @@
 # aspidpro
+Made using Jekyll
 
-malyarevich.github.io/aspidpro/
+https://github.com/malyarevich/aspidpro
 
 Marketing site for www.aspidpro.com
 
